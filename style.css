@@ -1,0 +1,141 @@
+/* 让页面元素使用更直观的盒模型 */
+* {
+    box-sizing: border-box;
+}
+
+/* 页面整体样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+}
+
+/* 计算器容器卡片样式 */
+.calculator-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* 表单组样式 */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* 输入框和下拉菜单样式 */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 按钮样式 */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* 结果显示区域样式 */
+.result-container {
+    margin-top: 25px;
+    text-align: left;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.result-container h3 {
+    margin-top: 0;
+}
+
+/* 结果输出区域内每个 <p> 标签的样式 */
+#result-output p {
+    margin: 8px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ========================================= */
+/* ===== 高亮显示总费用样式 (Highlight) ===== */
+/* ========================================= */
+.total-fee-highlight {
+    margin-top: 10px !important;
+    padding: 12px;
+    font-size: 22px !important;
+    font-weight: bold;
+    background-color: #ffc107;
+    color: #333;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.total-fee-highlight strong {
+    font-weight: 900; /* 让 "总费用" 三个字更粗 */
+}
+
+
+/* ========================================= */
+/* ===== 移动端优化 (Media Query) ===== */
+/* ========================================= */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .calculator-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .form-group input,
+    .form-group select,
+    button {
+        font-size: 18px;
+    }
+
+    #result-output p {
+        font-size: 16px;
+    }
+}
