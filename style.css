@@ -1,9 +1,8 @@
-/* 让页面元素使用更直观的盒模型 */
+/* 盒模型和全局字体 */
 * {
     box-sizing: border-box;
 }
 
-/* 页面整体样式 */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: #f4f7f9;
@@ -16,7 +15,7 @@ body {
     padding: 15px;
 }
 
-/* 计算器容器卡片样式 */
+/* 计算器卡片 */
 .calculator-container {
     background-color: #ffffff;
     padding: 30px;
@@ -33,7 +32,7 @@ h1 {
     font-size: 28px;
 }
 
-/* 表单组样式 */
+/* 表单组 */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -46,7 +45,7 @@ h1 {
     color: #555;
 }
 
-/* 输入框和下拉菜单样式 */
+/* 输入框和下拉菜单 */
 .form-group input,
 .form-group select {
     width: 100%;
@@ -56,7 +55,7 @@ h1 {
     font-size: 16px;
 }
 
-/* 按钮样式 */
+/* 按钮 */
 button {
     width: 100%;
     padding: 15px;
@@ -73,7 +72,7 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* 结果显示区域样式 */
+/* 结果区域 */
 .result-container {
     margin-top: 25px;
     text-align: left;
@@ -86,7 +85,7 @@ button:hover {
     margin-top: 0;
 }
 
-/* 结果输出区域内每个 <p> 标签的样式 */
+/* 结果输出行 */
 #result-output p {
     margin: 8px 0;
     font-family: 'Courier New', Courier, monospace;
@@ -95,7 +94,21 @@ button:hover {
 }
 
 /* ========================================= */
-/* ===== 高亮显示总费用样式 (Highlight) ===== */
+/* ===== 城市下拉菜单 (二级联动) ===== */
+/* ========================================= */
+
+/* 默认隐藏城市选择框 */
+#city-form-group {
+    display: none;
+}
+
+/* 当它有 'visible' 类时，显示它 */
+#city-form-group.visible {
+    display: block;
+}
+
+/* ========================================= */
+/* =====     高亮显示总费用样式        ===== */
 /* ========================================= */
 .total-fee-highlight {
     margin-top: 10px !important;
@@ -103,15 +116,15 @@ button:hover {
     font-size: 22px !important;
     font-weight: bold;
     background-color: #ffc107;
+    /* 黄色背景 */
     color: #333;
     border-radius: 5px;
     text-align: center;
 }
 
 .total-fee-highlight strong {
-    font-weight: 900; /* 让 "总费用" 三个字更粗 */
+    font-weight: 900;
 }
-
 
 /* ========================================= */
 /* ===== 移动端优化 (Media Query) ===== */
