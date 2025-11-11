@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>申通快递费用计算器</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="calculator-container">
         <h1>申通快递费用计算器</h1>
-        
+
         <div class="form-group">
             <label for="province-select">目的地省份:</label>
             <select id="province-select"></select>
         </div>
-
         <div class="form-group" id="city-form-group">
             <label for="city-select">目的地城市:</label>
             <select id="city-select"></select>
         </div>
 
-        <div class="form-group">
-            <label for="weight-input">包裹重量 (kg):</label>
-            <input type="number" id="weight-input" placeholder="例如: 2.5">
+        <hr class="section-divider">
+
+        <div class="calculation-region">
+            <label class="region-title">区域一: 按实际重量</label>
+            <div class="form-group">
+                <label for="actual-weight-input">实际重量 (kg):</label>
+                <input type="number" id="actual-weight-input" placeholder="例如: 2.5">
+            </div>
+            <div class="region-result" id="actual-result-display"></div>
+        </div>
+
+        <div class="calculation-region">
+            <label class="region-title">区域二: 按体积重量 (计泡)</label>
+            <div class="form-group">
+                <label for="length-input">长 (cm):</label>
+                <input type="number" id="length-input" placeholder="例如: 30">
+            </div>
+            <div class="form-group">
+                <label for="width-input">宽 (cm):</label>
+                <input type="number" id="width-input" placeholder="例如: 20">
+            </div>
+            <div class="form-group">
+                <label for="height-input">高 (cm):</label>
+                <input type="number" id="height-input" placeholder="例如: 10">
+            </div>
+            <div class="region-result" id="volume-result-display"></div>
         </div>
 
         <button id="calculate-btn">计算费用</button>
 
-        <div class="result-container">
-            <h3>计算结果:</h3>
+        <div class="result-container" id="final-result-section">
+            <h3>区域三: 计费总结</h3>
             <div id="result-output"></div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

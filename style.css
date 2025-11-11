@@ -1,4 +1,4 @@
-/* 盒模型和全局字体 */
+/* 基础样式 */
 * {
     box-sizing: border-box;
 }
@@ -15,7 +15,7 @@ body {
     padding: 15px;
 }
 
-/* 计算器卡片 */
+/* 计算器容器 */
 .calculator-container {
     background-color: #ffffff;
     padding: 30px;
@@ -45,7 +45,6 @@ h1 {
     color: #555;
 }
 
-/* 输入框和下拉菜单 */
 .form-group input,
 .form-group select {
     width: 100%;
@@ -55,7 +54,64 @@ h1 {
     font-size: 16px;
 }
 
-/* 按钮 */
+/* ========================================= */
+/* ===== 区域划分样式 (Region) ===== */
+/* ========================================= */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 30px 0;
+}
+
+.calculation-region {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.region-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 15px;
+    display: block;
+    text-align: left;
+}
+
+/* 区域内的中间结果 */
+.region-result {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    min-height: 40px;
+}
+
+.region-result .price {
+    color: #e67e22;
+    /* 区域价格用橙色 */
+}
+
+/* ========================================= */
+/* ===== 城市下拉菜单 (City Dropdown) ===== */
+/* ========================================= */
+#city-form-group {
+    display: none;
+}
+
+#city-form-group.visible {
+    display: block;
+}
+
+/* ========================================= */
+/* ===== 按钮 (Button) ===== */
+/* ========================================= */
 button {
     width: 100%;
     padding: 15px;
@@ -66,13 +122,16 @@ button {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #2980b9;
 }
 
-/* 结果区域 */
+/* ========================================= */
+/* ===== 区域三: 总结 (Summary) ===== */
+/* ========================================= */
 .result-container {
     margin-top: 25px;
     text-align: left;
@@ -85,7 +144,6 @@ button:hover {
     margin-top: 0;
 }
 
-/* 结果输出行 */
 #result-output p {
     margin: 8px 0;
     font-family: 'Courier New', Courier, monospace;
@@ -93,30 +151,25 @@ button:hover {
     line-height: 1.6;
 }
 
-/* ========================================= */
-/* ===== 城市下拉菜单 (二级联动) ===== */
-/* ========================================= */
-
-/* 默认隐藏城市选择框 */
-#city-form-group {
-    display: none;
+/* 重量明细 */
+#result-output .weight-details {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
 }
 
-/* 当它有 'visible' 类时，显示它 */
-#city-form-group.visible {
-    display: block;
+#result-output .dim-note {
+    font-size: 13px;
+    color: #666;
 }
 
-/* ========================================= */
-/* =====     高亮显示总费用样式        ===== */
-/* ========================================= */
+/* 高亮总费用 */
 .total-fee-highlight {
     margin-top: 10px !important;
     padding: 12px;
     font-size: 22px !important;
     font-weight: bold;
     background-color: #ffc107;
-    /* 黄色背景 */
     color: #333;
     border-radius: 5px;
     text-align: center;
@@ -127,7 +180,7 @@ button:hover {
 }
 
 /* ========================================= */
-/* ===== 移动端优化 (Media Query) ===== */
+/* ===== 移动端优化 (Mobile) ===== */
 /* ========================================= */
 @media (max-width: 600px) {
     body {
@@ -150,5 +203,9 @@ button:hover {
 
     #result-output p {
         font-size: 16px;
+    }
+
+    .calculation-region {
+        padding: 15px;
     }
 }
